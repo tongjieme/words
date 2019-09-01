@@ -12,8 +12,8 @@ sudo passwd git
 
 ## 然后安装git
 服务端执行
-CentOS/Fedora: yum install git
-Ubuntu/Debian: apt-get install git
+`CentOS/Fedora: yum install git`
+`Ubuntu/Debian: apt-get install git`
 
 ## 生成SSH Key
 本地电脑执行
