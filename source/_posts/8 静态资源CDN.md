@@ -2,10 +2,9 @@
 title: 静态资源CDN
 ---
 
-<ol>
-  <li><a href="https://www.staticfile.org/">https://www.staticfile.org</a></li>
-  <li><a href="http://www.cdnjs.com/">http://www.cdnjs.com</a></li>
-  <li><a href="https://developers.google.com/speed/libraries/">https://developers.google.com/speed/libraries</a></li>
-  <li>http://jscdn.upai.com</li>
-  <li>http://www.bootcdn.cn</li>
-</ol>
+- [https://www.jsdelivr.com/](https://www.jsdelivr.com/)
+- [https://www.staticfile.org](https://www.staticfile.org)
+- [https://developers.google.com/speed/libraries](https://developers.google.com/speed/libraries)
+- [http://jscdn.upai.com](http://jscdn.upai.com)
+- [http://www.bootcdn.cn](http://www.bootcdn.cn)
+- [https://www.jsdelivr.com/](https://www.jsdelivr.com/)
