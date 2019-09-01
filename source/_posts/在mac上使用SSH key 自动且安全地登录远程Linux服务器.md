@@ -46,8 +46,8 @@ The key's randomart image is:
 
 
 ## 存放私钥和公钥
-id_rsa 存放在客户端电脑, 存放路径为 ~/demo/.ssh/id_rsa 
-id_rsa.pub 存放在服务端, 存放路径为 ~/demo/.ssh/authorized_keys
+id_rsa 存放在客户端电脑, 存放路径为 `~/demo/.ssh/id_rsa `
+id_rsa.pub 存放在服务端, 存放路径为 `~/demo/.ssh/authorized_keys`
 使用SSH命令可以便捷地自动复制公钥到远程服务端
 ```bash
 cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
