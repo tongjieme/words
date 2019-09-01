@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tong Jiewen</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://tongjiewen.com/"/>
+  <updated>2017-12-09T09:46:57.000Z</updated>
+  <id>http://tongjiewen.com/</id>
+  
+  <author>
+    <name>Tong Jiewen</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Greasemonkey 油猴脚本编写</title>
+    <link href="http://tongjiewen.com/2017/12/09/17%20Greasemonkey%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"/>
+    <id>http://tongjiewen.com/2017/12/09/17 Greasemonkey 油猴脚本编写/</id>
+    <published>2017-12-09T09:44:55.000Z</published>
+    <updated>2017-12-09T09:46:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="起始脚本"><a href="#起始脚本" class="headerlink" title="起始脚本"></a>起始脚本</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ==UserScript==</span></span><br><span class="line"><span class="comment">// @name test： test</span></span><br><span class="line"><span class="comment">// @icon            https://xxx/icon.jpg</span></span><br><span class="line"><span class="comment">// @grant           GM_xmlhttpRequest</span></span><br><span class="line"><span class="comment">// @author          AC</span></span><br><span class="line"><span class="comment">// @create          2015-11-25</span></span><br><span class="line"><span class="comment">// @run-at          document-start</span></span><br><span class="line"><span class="comment">// @version         13.3</span></span><br><span class="line"><span class="comment">// @connect         *</span></span><br><span class="line"><span class="comment">// @include         /^https?://jamestung.net/.*/</span></span><br><span class="line"><span class="comment">// @home-url        https://greasyfork.org/zh-TW/scripts/XXX</span></span><br><span class="line"><span class="comment">// @namespace       10086@qq.com</span></span><br><span class="line"><span class="comment">// @copyright       2017, AC</span></span><br><span class="line"><span class="comment">// @description     这是描述</span></span><br><span class="line"><span class="comment">// @lastmodified    2017-12-04</span></span><br><span class="line"><span class="comment">// @feedback-url    https://greasyfork.org/zh-TW/scripts/XXX</span></span><br><span class="line"><span class="comment">// @note            备注</span></span><br><span class="line"><span class="comment">// @grant           GM_getValue</span></span><br><span class="line"><span class="comment">// @require         https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js</span></span><br><span class="line"><span class="comment">// ==/UserScript==</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ACMO = <span class="built_in">window</span>.MutationObserver || <span class="built_in">window</span>.WebKitMutationObserver || <span class="built_in">window</span>.MozMutationObserver;</span><br><span class="line">    <span class="keyword">var</span> option = &#123;<span class="string">'childList'</span>: <span class="literal">true</span>, <span class="string">'subtree'</span>: <span class="literal">true</span>&#125;;</span><br><span class="line">    <span class="keyword">var</span> observer = <span class="keyword">new</span> ACMO(<span class="function"><span class="keyword">function</span> (<span class="params">records</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    observer.observe(<span class="built_in">document</span>.body, option);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    $(<span class="string">'body'</span>).html(<span class="string">"empty body"</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure><h2 id="用户脚本元键值"><a href="#用户脚本元键值" class="headerlink" title="用户脚本元键值"></a>用户脚本元键值</h2><p><a href="https://greasyfork.org/zh-CN/help/meta-keys" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/help/meta-keys</a></p><h2 id="官方用户脚本元键值-列表"><a href="#官方用户脚本元键值-列表" class="headerlink" title="官方用户脚本元键值 列表"></a>官方用户脚本元键值 列表</h2><p><a href="https://wiki.greasespot.net/Metadata_Block" target="_blank" rel="noopener">https://wiki.greasespot.net/Metadata_Block</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;起始脚本&quot;&gt;&lt;a href=&quot;#起始脚本&quot; class=&quot;headerlink&quot; title=&quot;起始脚本&quot;&gt;&lt;/a&gt;起始脚本&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 16.04 安装nginx</title>
+    <link href="http://tongjiewen.com/2017/12/09/16_Ubuntu_16.04_%E5%AE%89%E8%A3%85nginx/"/>
+    <id>http://tongjiewen.com/2017/12/09/16_Ubuntu_16.04_安装nginx/</id>
+    <published>2017-12-09T08:03:06.000Z</published>
+    <updated>2017-12-09T09:14:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装-依赖库"><a href="#安装-依赖库" class="headerlink" title="安装 依赖库"></a>安装 依赖库</h2><h4 id="gcc-g"><a href="#gcc-g" class="headerlink" title="gcc g++"></a>gcc g++</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install build-essential -y</span><br><span class="line">apt-get install libtool -y</span><br></pre></td></tr></table></figure><h4 id="pcre"><a href="#pcre" class="headerlink" title="pcre"></a>pcre</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install libpcre3 libpcre3-dev -y</span><br></pre></td></tr></table></figure><h4 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install zlib1g-dev -y</span><br></pre></td></tr></table></figure><h4 id="ssl"><a href="#ssl" class="headerlink" title="ssl"></a>ssl</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openssl -y</span><br></pre></td></tr></table></figure><h2 id="下载源码："><a href="#下载源码：" class="headerlink" title="下载源码："></a>下载源码：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.11.3.tar.gz</span><br><span class="line">```sh</span><br><span class="line"><span class="comment">## 解压：</span></span><br><span class="line">```sh</span><br><span class="line">tar -zxvf nginx-1.11.3.tar.gz</span><br></pre></td></tr></table></figure><h2 id="进入解压目录："><a href="#进入解压目录：" class="headerlink" title="进入解压目录："></a>进入解压目录：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> nginx-1.11.3</span><br></pre></td></tr></table></figure><h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx</span><br></pre></td></tr></table></figure><h2 id="编辑nginx："><a href="#编辑nginx：" class="headerlink" title="编辑nginx："></a>编辑nginx：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure><h2 id="安装nginx："><a href="#安装nginx：" class="headerlink" title="安装nginx："></a>安装nginx：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure><h2 id="启动nginx："><a href="#启动nginx：" class="headerlink" title="启动nginx："></a>启动nginx：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/nginx/sbin/nginx -c /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><h2 id="查看nginx进程："><a href="#查看nginx进程：" class="headerlink" title="查看nginx进程："></a>查看nginx进程：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep nginx</span><br></pre></td></tr></table></figure><h2 id="其它资料"><a href="#其它资料" class="headerlink" title="其它资料"></a>其它资料</h2><p>nginx 官方安装指引<br><a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/install/" target="_blank" rel="noopener">https://www.nginx.com/resources/wiki/start/topics/tutorials/install/</a></p><p>安装配置选项列表<br><a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/" target="_blank" rel="noopener">https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装-依赖库&quot;&gt;&lt;a href=&quot;#安装-依赖库&quot; class=&quot;headerlink&quot; title=&quot;安装 依赖库&quot;&gt;&lt;/a&gt;安装 依赖库&lt;/h2&gt;&lt;h4 id=&quot;gcc-g&quot;&gt;&lt;a href=&quot;#gcc-g&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 事务的ACID 特性和隔离级别</title>
+    <link href="http://tongjiewen.com/2017/06/04/MySQL%20%E4%BA%8B%E5%8A%A1%E7%9A%84ACID%20%E7%89%B9%E6%80%A7%E5%92%8C%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/"/>
+    <id>http://tongjiewen.com/2017/06/04/MySQL 事务的ACID 特性和隔离级别/</id>
+    <published>2017-06-04T13:22:07.000Z</published>
+    <updated>2017-06-06T16:06:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>事务是一系列的SQL语句的集合, 定义了数据库系统中一个操作的结果在何时以何种方式对其他并发操作可见,<br>事务具有回滚的特点, 如果事务中的某一条SQL语句无法成功执行, 那么所有语句都不会执行, 并且不会提交</p><p>例子: 在下面的事务中, 无论是 STATEMENT A 还是 B, 其中一个没有成功执行, 则所有操作都不会执行, 数据库并没有任何改变<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span>;</div><div class="line">STATEMENT A</div><div class="line">STATEMENT B</div><div class="line"><span class="keyword">COMMIT</span>;</div></pre></td></tr></table></figure></p><h3 id="事务的ACID"><a href="#事务的ACID" class="headerlink" title="事务的ACID"></a>事务的ACID</h3><p>事务的四个特征 <code>原子性</code>, <code>一致性</code>, <code>隔离性</code>, <code>持久性</code></p><h4 id="atomicity-原子性"><a href="#atomicity-原子性" class="headerlink" title="atomicity 原子性"></a>atomicity 原子性</h4><p>原子是自然界一个不可分割的粒子, 事务具有原子性, 这意味着事务里的SQL语句只能全成功执行或全失败, 这一特性有助于数据的完整性</p><h4 id="consistency-一致性"><a href="#consistency-一致性" class="headerlink" title="consistency 一致性"></a>consistency 一致性</h4><p>如果事务最终没有执行到COMMIT 语句, 那么所有修改都不应该保存到数据库</p><h4 id="isolation-隔离性"><a href="#isolation-隔离性" class="headerlink" title="isolation 隔离性"></a>isolation 隔离性</h4><p>同一时间可能有多个事务在操作同一个数据表或者某一行的数据, 在没执行到COMMIT语句前, 事务与事务之间的数据更改相互是透明不可见的</p><h4 id="durability-持久性"><a href="#durability-持久性" class="headerlink" title="durability 持久性"></a>durability 持久性</h4><p>执行到COMMIT 语句后, 事务所做的修改都会保存到数据库中</p><h3 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h3><h4 id="READ-UNCOMMITTED-未提交读"><a href="#READ-UNCOMMITTED-未提交读" class="headerlink" title="READ UNCOMMITTED 未提交读"></a>READ UNCOMMITTED 未提交读</h4><p>最低的隔离级别, 性能影响最小, 不过性能也好不了太多, 而且有产生<code>脏读</code>的可能性, 事务可以看到其他事务“尚未提交”的修改</p><h4 id="READ-COMMITTED-提交读"><a href="#READ-COMMITTED-提交读" class="headerlink" title="READ COMMITTED 提交读"></a>READ COMMITTED 提交读</h4><p>一个事务从开始知道提交之前, 所做的任何修改对其它事务来说都是不可见的. </p><h4 id="REPEATABLE-READ-可重复读"><a href="#REPEATABLE-READ-可重复读" class="headerlink" title="REPEATABLE READ 可重复读"></a>REPEATABLE READ 可重复读</h4><p>此级别是MySQL默认的事务级别, 同一事务中多次读取同样记录的结果是一致的.</p><h4 id="SERIALIZABLE-可串行化-也叫-可序列化"><a href="#SERIALIZABLE-可串行化-也叫-可序列化" class="headerlink" title="SERIALIZABLE 可串行化 也叫 可序列化"></a>SERIALIZABLE 可串行化 也叫 可序列化</h4><p>级别最高, 所有事务都以串行化执行, MySQL对事务操作的所有行都会加锁,解决了幻读的问题<br>如果对数据局即时性及一致性有很高要求, 可考虑此级别, </p><h4 id="隔离级别的查看与设置"><a href="#隔离级别的查看与设置" class="headerlink" title="隔离级别的查看与设置"></a>隔离级别的查看与设置</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> @@GLOBAL.tx_isolation, @@tx_isolation;</div><div class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> tx_isolation=<span class="string">'REPEATABLE-READ'</span>;</div><div class="line"><span class="keyword">SET</span> <span class="keyword">SESSION</span> tx_isolation=<span class="string">'SERIALIZABLE'</span>;</div><div class="line"><span class="keyword">SET</span> tx_isolation=<span class="string">'SERIALIZABLE'</span>;</div></pre></td></tr></table></figure><p><code>my.cnf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line">transaction-isolation = REPEATABLE-READ</div></pre></td></tr></table></figure></p><h3 id="读现象"><a href="#读现象" class="headerlink" title="读现象"></a>读现象</h3><h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p>当一个事务允许读取另外一个事务修改但未提交的数据时，就可能发生脏读。</p><h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><h4 id="幻-影-读"><a href="#幻-影-读" class="headerlink" title="幻(影)读"></a>幻(影)读</h4><p>在事务执行过程中，当两个完全相同的查询语句执行得到不同的结果集。这种现象称为“幻(影)读（phantom read）”</p><h3 id="总结表格"><a href="#总结表格" class="headerlink" title="总结表格"></a>总结表格</h3><table><thead><tr><th>隔离级别</th><th>脏读可能性</th><th>不可重复读可能性</th><th>幻(影)读可能性</th></tr></thead><tbody><tr><td>未提交读</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>提交读</td><td>no</td><td>yes</td><td>yes</td></tr><tr><td>可重复读</td><td>no</td><td>no</td><td>yes</td></tr><tr><td>可串行化</td><td>no</td><td>no</td><td>no</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;事务是一系列的SQL语句的集合, 定义了数据库系统中一个操作的结果在何时以何种方式对其他并发操作可见,&lt;br&gt;事务具有回滚的特点, 如果事务中的某一条SQL语句无法成功执行, 那么所有语句都不会执行, 并且不会提交&lt;/p&gt;
+&lt;p&gt;例子: 在下面的事务中, 无论是 STATE
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 日志</title>
+    <link href="http://tongjiewen.com/2017/06/02/MySQL%20%E6%97%A5%E5%BF%97/"/>
+    <id>http://tongjiewen.com/2017/06/02/MySQL 日志/</id>
+    <published>2017-06-02T14:32:40.000Z</published>
+    <updated>2017-06-02T15:15:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>mysql 的错误信息和日常操作都会记录在日志文件中， 分析这些文件可以知道数据库的具体运行情况和哪些地方可以进行优化</p><p>MySQL日志有四种<br>二进制日志     记录了除查询语句的操作，二进制文件形式记录<br>错误日志      记录了数据库启动，停止，运行错误等信息<br>通用查询日志               记录用户所有的操作<br>慢查询日志     记录比较慢超出设定时间的操作</p><h3 id="二进制日志"><a href="#二进制日志" class="headerlink" title="二进制日志"></a>二进制日志</h3><p>二进制日志非常有用，当数据库异常停止后, 或遭到破坏，可以通过二进制日志记录修复数据库</p><p>二进制日志记录默认是关闭的，需要通过设置 my.cnf 开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line"><span class="built_in">log</span>-bin=/usr/<span class="built_in">local</span>/mysql/<span class="built_in">log</span>/bin.log</div></pre></td></tr></table></figure><h3 id="利用二进制日志还原数据库"><a href="#利用二进制日志还原数据库" class="headerlink" title="利用二进制日志还原数据库"></a>利用二进制日志还原数据库</h3><p>二进制日志记录了除查询以外所有操作语句，利用 mysqlbin 读取二进制日志 将结果pipe 进 mysql 命令即可还原数据库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysqlbin log.000001 | mysql -u root -p</div><div class="line">mysqlbin log.000002 | mysql -u root -p</div></pre></td></tr></table></figure></p><p>注意： 还原顺序一定要从 编号比较小的开始还原</p><h3 id="错误日志"><a href="#错误日志" class="headerlink" title="错误日志"></a>错误日志</h3><p>错误日志主要的作用是作为当数据库出现异常时，用来分析错误原因的资料<br>错误日志可以通过 my.cnf 里的 log-error 选项设置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line"><span class="built_in">log</span>-error=/usr/<span class="built_in">local</span>/mysql/<span class="built_in">log</span>/error.log</div></pre></td></tr></table></figure></p><p>错误日志是文本形式存储的，所以可以直接cat 查看即可</p><h3 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h3><p>通过调查慢查询日志，可以找出执行效率低的查询语句<br>此日志默认关闭，需要通过配置my.cnf 后重启数据库以启用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line"><span class="built_in">log</span>-slow-queries=/usr/<span class="built_in">local</span>/mysql/<span class="built_in">log</span>/slow.log      <span class="comment">#日志保存路径</span></div><div class="line">long_query_time=n                              <span class="comment">#查询所需时间，单位秒</span></div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;mysql 的错误信息和日常操作都会记录在日志文件中， 分析这些文件可以知道数据库的具体运行情况和哪些地方可以进行优化&lt;/p&gt;
+&lt;p&gt;MySQL日志有四种&lt;br&gt;二进制日志     记录了除查询语句的操作，二进制文件形式记录&lt;br&gt;错误日志      记录了数据库启动，停止
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PHPUnit 测试与 Travis CI 自动持续测试</title>
+    <link href="http://tongjiewen.com/2017/05/26/PHPUnit%20%E6%B5%8B%E8%AF%95%E4%B8%8E%20Travis%20CI%20%E8%87%AA%E5%8A%A8%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/"/>
+    <id>http://tongjiewen.com/2017/05/26/PHPUnit 测试与 Travis CI 自动持续测试/</id>
+    <published>2017-05-26T02:36:19.000Z</published>
+    <updated>2017-05-26T02:36:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>对程序编写自动化的测试是非常有好处的, 这可以让我们每次迭代更新程序, 以及部署程序到线上生产环境之前提前发现问题, 从此不用发布到线上担惊受怕会出bug</p><p>PHP 测试可以使用 PHPUnit 测试框架</p><h3 id="安装PHPUnit"><a href="#安装PHPUnit" class="headerlink" title="安装PHPUnit"></a>安装PHPUnit</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require --dev phpunit/phpunit</div></pre></td></tr></table></figure><p>安装好了之后, 可以试着运行 <code>vendor/bin/phpunit -v</code> </p><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>新建好下面的目录结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">├── composer.json</div><div class="line">├── composer.lock</div><div class="line">├── phpunit.xml         # phpunit 的配置文件</div><div class="line">├── src                 # 需要被测试的代码</div><div class="line">│   └── Animal.php</div><div class="line">├── tests               # 测试用例存放的文件夹</div><div class="line">│   ├── AnimalTest.php  # 测试用例</div><div class="line">│   └── bootstrap.php   # phpunit 入口文件</div><div class="line">└── vendor              # 第三方composer 组件</div><div class="line">    ├── autoload.php</div><div class="line">    ├── bin</div><div class="line">    ├── composer</div><div class="line">    ├── doctrine</div><div class="line">    ├── myclabs</div><div class="line">    ├── phpdocumentor</div><div class="line">    ├── phpspec</div><div class="line">    ├── phpunit</div><div class="line">    ├── sebastian</div><div class="line">    ├── symfony</div><div class="line">    └── webmozart</div></pre></td></tr></table></figure></p><h3 id="准备要测试的代码"><a href="#准备要测试的代码" class="headerlink" title="准备要测试的代码"></a>准备要测试的代码</h3><p>假设我们要测试<code>src/Animal.php</code>, 里面的构造方法是否成功初始化Animal 示例的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">namespace App;</div><div class="line"></div><div class="line">class Animal</div><div class="line">&#123;</div><div class="line">    protected $name;</div><div class="line"></div><div class="line">    public function __construct($name)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;setName($name);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * @return mixed</div><div class="line">     */</div><div class="line">    public function getName()</div><div class="line">    &#123;</div><div class="line">        return $this-&gt;name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * @param mixed $name</div><div class="line">     */</div><div class="line">    public function setName($name)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;name = $name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h3 id="配置PHPUnit"><a href="#配置PHPUnit" class="headerlink" title="配置PHPUnit"></a>配置PHPUnit</h3><p>修改 <code>phpunit.xml</code> 添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;phpunit bootstrap=&quot;tests/bootstrap.php&quot;&gt;</div><div class="line">  &lt;testsuites&gt;</div><div class="line">    &lt;testsuite name=&quot;Animal&quot;&gt;</div><div class="line">      &lt;directory suffix=&quot;Test.php&quot;&gt;tests&lt;/directory&gt;</div><div class="line">    &lt;/testsuite&gt;</div><div class="line">  &lt;/testsuites&gt;</div><div class="line">&lt;/phpunit&gt;</div></pre></td></tr></table></figure></p><p>我们制定tests文件里面以Test.php 结尾的文件都是测试用例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;testsuite name=&quot;Animal&quot;&gt;</div><div class="line">  &lt;directory suffix=&quot;Test.php&quot;&gt;tests&lt;/directory&gt;</div><div class="line">&lt;/testsuite&gt;</div></pre></td></tr></table></figure></p><h3 id="bootstrap-php"><a href="#bootstrap-php" class="headerlink" title="bootstrap.php"></a>bootstrap.php</h3><p>phpunit 会在运行测试的时候首先运行<code>tests/bootstrap.php</code>文件, 所以为了测试用例的编写便利, 可以在文件中添加composer 的自动加载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">require dirname(__DIR__) . &apos;/vendor/autoload.php&apos;;</div></pre></td></tr></table></figure></p><h3 id="测试用例-test-case"><a href="#测试用例-test-case" class="headerlink" title="测试用例(test case)"></a>测试用例(test case)</h3><p>每个测试用例就是一个类, 每个类的方法就是一个测试, 测试用例组成测试组件(test suite)</p><p>在 <code>phpunit.xml</code> 配置里 我们配置了 <code>&lt;directory suffix=&quot;Test.php&quot;&gt;tests&lt;/directory&gt;</code>, 所以<code>test</code> 文件夹就是我们存放测试用例的地方, 而且所有的测试用例文件应该以 Test.php结尾来命名<br>phpunit 会运行所有测试用例里面每个以test开头的方法, 每个方法都是一个测试<br><code>tests/AnimalTest.php</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">namespace App;</div><div class="line"></div><div class="line">use PHPUnit\Framework\TestCase;</div><div class="line"></div><div class="line">class AnimalTest extends TestCase</div><div class="line">&#123;</div><div class="line">    public function testSetNameWithConstructor()</div><div class="line">    &#123;</div><div class="line">        $animal = new Animal(&apos;James&apos;);</div><div class="line">        $this-&gt;assertAttributeEquals(&apos;James&apos;, &apos;name&apos;, $animal);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vendor/bin/phpunit -c phpunit.xml</div></pre></td></tr></table></figure><p>测试结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PHPUnit 5.7.19 by Sebastian Bergmann and contributors.</div><div class="line"></div><div class="line">.                                                                   1 / 1 (100%)</div><div class="line"></div><div class="line">Time: 113 ms, Memory: 3.75MB</div><div class="line"></div><div class="line">OK (1 test, 2 assertions)</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;对程序编写自动化的测试是非常有好处的, 这可以让我们每次迭代更新程序, 以及部署程序到线上生产环境之前提前发现问题, 从此不用发布到线上担惊受怕会出bug&lt;/p&gt;
+&lt;p&gt;PHP 测试可以使用 PHPUnit 测试框架&lt;/p&gt;
+&lt;h3 id=&quot;安装PHPUnit&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决 SSH 登陆linux 慢的问题</title>
+    <link href="http://tongjiewen.com/2017/05/10/%E8%A7%A3%E5%86%B3%20SSH%20%E7%99%BB%E9%99%86linux%20%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://tongjiewen.com/2017/05/10/解决 SSH 登陆linux 慢的问题/</id>
+    <published>2017-05-10T10:35:27.000Z</published>
+    <updated>2017-05-23T07:23:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>SSH 登陆慢的原因有很多，首先应该使用 <code>-vvv</code> 来让SSH 打印详细的连接信息</p><p>比较常见的原因，可能是服务器端的ssh配置启用了 <code>反向DNS 解析 (reverse DNS lookup)</code> 一般来说，它对安全的提高的作用不是很大，所以可以考虑把它关闭来提高SSH登陆的速度</p><p>还有另外一个原因，GSSAPI 身份校验超时, 关闭此校验也可以提高登陆速度</p><h3 id="关闭reverse-DNS-lookup方法"><a href="#关闭reverse-DNS-lookup方法" class="headerlink" title="关闭reverse DNS lookup方法"></a>关闭reverse DNS lookup方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;UseDNS no&quot; &gt;&gt; /etc/ssh/sshd_config</div></pre></td></tr></table></figure><h3 id="关闭-GSSAPI-身份校验"><a href="#关闭-GSSAPI-身份校验" class="headerlink" title="关闭 GSSAPI 身份校验"></a>关闭 GSSAPI 身份校验</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;GSSAPIAuthentication no&quot; &gt;&gt; /etc/ssh/sshd_config</div></pre></td></tr></table></figure><h3 id="最后重启ssh服务"><a href="#最后重启ssh服务" class="headerlink" title="最后重启ssh服务"></a>最后重启ssh服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;SSH 登陆慢的原因有很多，首先应该使用 &lt;code&gt;-vvv&lt;/code&gt; 来让SSH 打印详细的连接信息&lt;/p&gt;
+&lt;p&gt;比较常见的原因，可能是服务器端的ssh配置启用了 &lt;code&gt;反向DNS 解析 (reverse DNS lookup)&lt;/code&gt; 一般来说，它对
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vscode Open the current folder in the integrated terminal</title>
+    <link href="http://tongjiewen.com/2017/05/07/6%20vscode%20Open%20the%20current%20folder%20in%20the%20integrated%20terminal/"/>
+    <id>http://tongjiewen.com/2017/05/07/6 vscode Open the current folder in the integrated terminal/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T06:49:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装-扩展-“open-in-terminal”"><a href="#安装-扩展-“open-in-terminal”" class="headerlink" title="安装 扩展 “open in terminal”"></a>安装 扩展 “open in terminal”</h2><h2 id="绑定快捷键"><a href="#绑定快捷键" class="headerlink" title="绑定快捷键"></a>绑定快捷键</h2><p>keybinding.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      &quot;key&quot;: &quot;cmd+t&quot;,</span><br><span class="line">      &quot;command&quot;: &quot;openInTerminal.openRoot&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装-扩展-“open-in-terminal”&quot;&gt;&lt;a href=&quot;#安装-扩展-“open-in-terminal”&quot; class=&quot;headerlink&quot; title=&quot;安装 扩展 “open in terminal”&quot;&gt;&lt;/a&gt;安装 扩展 “open in
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>windows 10 启用或禁用休眠</title>
+    <link href="http://tongjiewen.com/2017/05/07/5%20windows%2010%20%E5%90%AF%E7%94%A8%E6%88%96%E7%A6%81%E7%94%A8%E4%BC%91%E7%9C%A0/"/>
+    <id>http://tongjiewen.com/2017/05/07/5 windows 10 启用或禁用休眠/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:41:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>启用：</p><p>以管理员身份打开cmd：</p><p><strong>powercfg.exe /hibernate on</strong></p><p>&nbsp;</p><p>以管理员身份打开cmd：</p><p><strong>powercfg.exe /hibernate off</strong></p><p>&nbsp;</p><p>参考资料：<br><a href="https://www.cnet.com/how-to/how-to-enable-or-disable-hibernate-in-windows-10/" target="_blank" rel="noopener">https://www.cnet.com/how-to/how-to-enable-or-disable-hibernate-in-windows-10/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;启用：&lt;/p&gt;
+&lt;p&gt;以管理员身份打开cmd：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;powercfg.exe /hibernate on&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;以管理员身份打开cmd：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;powercfg.exe 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac禁用内存压缩</title>
+    <link href="http://tongjiewen.com/2017/05/07/Mac%E7%A6%81%E7%94%A8%E5%86%85%E5%AD%98%E5%8E%8B%E7%BC%A9/"/>
+    <id>http://tongjiewen.com/2017/05/07/Mac禁用内存压缩/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-05-07T03:46:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>内存压缩功能是OSX 10.9 Mavericks增加的新特色,在内存不够用的情况下利用CPU压缩内存数据,以改善当前可用内存不足的情况,<br>内存压缩功能在某种程度上增加了CPU的负担,若果CPU运行速度比较吃紧的情况下,可以通过禁用内存压缩功能舒缓CPU压力.</p><p>以下为禁用方法</p><p>在终端输入:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo nvram boot-args=<span class="string">"vm_compressor=1"</span> <span class="comment"># vm_compressor默认值为 4,这里设为1表示禁用内存压缩</span></div><div class="line">sysctl <span class="_">-a</span> vm.compressor_mode <span class="comment"># 如果这里输出是 1 的话表示禁用成功</span></div></pre></td></tr></table></figure></p><h4 id="问题排除"><a href="#问题排除" class="headerlink" title="问题排除"></a>问题排除</h4><p>在新版 macOS Sierra 10.12.1 中, 必须在recovory 模式中才能禁用,<br>recovory 模式 进入方法为: 开机按住 <code>cmd + R</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;内存压缩功能是OSX 10.9 Mavericks增加的新特色,在内存不够用的情况下利用CPU压缩内存数据,以改善当前可用内存不足的情况,&lt;br&gt;内存压缩功能在某种程度上增加了CPU的负担,若果CPU运行速度比较吃紧的情况下,可以通过禁用内存压缩功能舒缓CPU压力.&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 中的硬链接与软连接异同点</title>
+    <link href="http://tongjiewen.com/2017/05/07/3%20Linux%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://tongjiewen.com/2017/05/07/3 Linux 自定义开机启动程序/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:37:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><p>使用大部分的命令(rm 除外)对Linux 的硬链接和软连接进行操作, 都会对实体文件有影响</p><h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><ol><li>硬链接基本上和文件本身一样, 当所有指向实体文件的硬链接都被删除的话,实体文件也会被删掉<br>软连接被删除对实体文件无影响</li><li>硬链接无法引用目录, 无法引用外部磁盘分区的文件</li><li>实体文件移动位置, 硬链接依然有效, 软连接则成坏链接</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;相同点&quot;&gt;&lt;a href=&quot;#相同点&quot; class=&quot;headerlink&quot; title=&quot;相同点&quot;&gt;&lt;/a&gt;相同点&lt;/h2&gt;&lt;p&gt;使用大部分的命令(rm 除外)对Linux 的硬链接和软连接进行操作, 都会对实体文件有影响&lt;/p&gt;
+&lt;h2 id=&quot;不同点&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 中的硬链接与软连接异同点</title>
+    <link href="http://tongjiewen.com/2017/05/07/2%20Linux%20%E4%B8%AD%E7%9A%84%E7%A1%AC%E9%93%BE%E6%8E%A5%E4%B8%8E%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%BC%82%E5%90%8C%E7%82%B9/"/>
+    <id>http://tongjiewen.com/2017/05/07/2 Linux 中的硬链接与软连接异同点/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:37:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><p>使用大部分的命令(rm 除外)对Linux 的硬链接和软连接进行操作, 都会对实体文件有影响</p><h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><ol><li>硬链接基本上和文件本身一样, 当所有指向实体文件的硬链接都被删除的话,实体文件也会被删掉<br>软连接被删除对实体文件无影响</li><li>硬链接无法引用目录, 无法引用外部磁盘分区的文件</li><li>实体文件移动位置, 硬链接依然有效, 软连接则成坏链接</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;相同点&quot;&gt;&lt;a href=&quot;#相同点&quot; class=&quot;headerlink&quot; title=&quot;相同点&quot;&gt;&lt;/a&gt;相同点&lt;/h2&gt;&lt;p&gt;使用大部分的命令(rm 除外)对Linux 的硬链接和软连接进行操作, 都会对实体文件有影响&lt;/p&gt;
+&lt;h2 id=&quot;不同点&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 安装Linux子系统</title>
+    <link href="http://tongjiewen.com/2017/05/07/9%20Windows%20%E5%AE%89%E8%A3%85Linux%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://tongjiewen.com/2017/05/07/9 Windows 安装Linux子系统/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:42:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://msdn.microsoft.com/en-us/commandline/wsl/install-win10" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/commandline/wsl/install-win10</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/install-win10&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://msdn.microsoft.com/en-us/
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML5 video Codec 格式工厂转换配置</title>
+    <link href="http://tongjiewen.com/2017/05/07/15%20HTML5%20video%20Codec%20%E6%A0%BC%E5%BC%8F%E5%B7%A5%E5%8E%82%E8%BD%AC%E6%8D%A2%E9%85%8D%E7%BD%AE/"/>
+    <id>http://tongjiewen.com/2017/05/07/15 HTML5 video Codec 格式工厂转换配置/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T06:27:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img class="alignnone size-full wp-image-312" src="http://ww1.sinaimg.cn/large/a533135dgy1fmahzagegsj20ho0f6mxe.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-312&quot; src=&quot;http://ww1.sinaimg.cn/large/a533135dgy1fmahzagegsj20ho0f6mxe.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>静态资源CDN</title>
+    <link href="http://tongjiewen.com/2017/05/07/8%20%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90CDN/"/>
+    <id>http://tongjiewen.com/2017/05/07/8 静态资源CDN/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:41:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><br>  <li><a href="https://www.staticfile.org/" target="_blank" rel="noopener">https://www.staticfile.org</a></li><br>  <li><a href="http://www.cdnjs.com/" target="_blank" rel="noopener">http://www.cdnjs.com</a></li><br>  <li><a href="https://developers.google.com/speed/libraries/" target="_blank" rel="noopener">https://developers.google.com/speed/libraries</a></li><br>  <li><a href="http://jscdn.upai.com" target="_blank" rel="noopener">http://jscdn.upai.com</a></li><br>  <li><a href="http://www.bootcdn.cn" target="_blank" rel="noopener">http://www.bootcdn.cn</a></li><br></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;&lt;br&gt;  &lt;li&gt;&lt;a href=&quot;https://www.staticfile.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.staticfile.org&lt;/a&gt;&lt;/li&gt;&lt;br&gt;  &lt;li&gt;&lt;a href=&quot;htt
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome 插件收集</title>
+    <link href="http://tongjiewen.com/2017/05/07/7%20Chrome%20%E6%8F%92%E4%BB%B6%E6%94%B6%E9%9B%86/"/>
+    <id>http://tongjiewen.com/2017/05/07/7 Chrome 插件收集/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:41:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><br>  <li>Blipshot: one click full page screenshots 全屏截图</li><br>  <li>Custom JavaScript for websites</li><br>  <li>Disable Content-Security-Policy</li><br>  <li>HTTP Request Blocker</li><br>  <li>Replace Google CDN</li><br>  <li>Syntax Highlighter (源码语法高亮显示)</li><br>  <li><a href="https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag" target="_blank" rel="noopener">violentmonkey</a></li><br>  <li><a href="https://greasyfork.org/zh-CN/scripts/14178-ac-baidu-%E4%BC%98%E5%8C%96%E7%99%BE%E5%BA%A6-%E6%90%9C%E7%8B%97-%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B9%8B%E9%87%8D%E5%AE%9A%E5%90%91%E5%8E%BB%E9%99%A4-%E5%8E%BB%E5%B9%BF%E5%91%8A-favicon" target="_blank" rel="noopener">ac-baidu</a></li><br>  <li><a href="https://greasyfork.org/zh-CN/scripts/22590-%E4%B8%80%E9%94%AE%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD" target="_blank" rel="noopener">一键离线下载</a></li><br></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;&lt;br&gt;  &lt;li&gt;Blipshot: one click full page screenshots 全屏截图&lt;/li&gt;&lt;br&gt;  &lt;li&gt;Custom JavaScript for websites&lt;/li&gt;&lt;br&gt;  &lt;li&gt;Disable Content-Secu
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>npm - “Can&#39;t find Python executable ”python“, you can set the PYTHON env variable.”</title>
+    <link href="http://tongjiewen.com/2017/05/07/14%20npm%20-%20%E2%80%9CCan&#39;t%20find%20Python%20executable%20%E2%80%9Dpython%E2%80%9C,%20you%20can%20set%20the%20PYTHON%20env%20variable.%E2%80%9D/"/>
+    <id>http://tongjiewen.com/2017/05/07/14 npm - “Can&#39;t find Python executable ”python“, you can set the PYTHON env variable.”/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-10T06:45:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>设置环境变量</p><p><code>PYTHON=C:\CocosCreator\resources\utils\Python27\python.exe</code><br>即可</p><p>python 3 设置后暂时无效</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;设置环境变量&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PYTHON=C:\CocosCreator\resources\utils\Python27\python.exe&lt;/code&gt;&lt;br&gt;即可&lt;/p&gt;
+&lt;p&gt;python 3 设置后暂时无效&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>国内使用npm 镜像</title>
+    <link href="http://tongjiewen.com/2017/05/07/10%20%E5%9B%BD%E5%86%85%E4%BD%BF%E7%94%A8npm%20%E9%95%9C%E5%83%8F/"/>
+    <id>http://tongjiewen.com/2017/05/07/10 国内使用npm 镜像/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:42:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用淘宝镜像(cnpm):<br>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p><p>还原官方镜像:<br>npm config set registry <a href="https://registry.npmjs.org/" target="_blank" rel="noopener">https://registry.npmjs.org/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用淘宝镜像(cnpm):&lt;br&gt;npm config set registry &lt;a href=&quot;https://registry.npm.taobao.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://registry.npm.ta
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>An Introduction to HAProxy and Load Balancing Concepts</title>
+    <link href="http://tongjiewen.com/2017/05/07/12%20How%20To%20Use%20HAProxy%20to%20Set%20Up%20HTTP%20Load%20Balancing%20on%20an%20Ubuntu%20VPS/"/>
+    <id>http://tongjiewen.com/2017/05/07/12 How To Use HAProxy to Set Up HTTP Load Balancing on an Ubuntu VPS/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:43:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="An-Introduction-to-HAProxy-and-Load-Balancing-Concepts"><a href="#An-Introduction-to-HAProxy-and-Load-Balancing-Concepts" class="headerlink" title="An Introduction to HAProxy and Load Balancing Concepts"></a>An Introduction to HAProxy and Load Balancing Concepts</h1><p><a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts</a></p><h1 id="How-To-Use-HAProxy-to-Set-Up-HTTP-Load-Balancing-on-an-Ubuntu-VPS"><a href="#How-To-Use-HAProxy-to-Set-Up-HTTP-Load-Balancing-on-an-Ubuntu-VPS" class="headerlink" title="How To Use HAProxy to Set Up HTTP Load Balancing on an Ubuntu VPS"></a>How To Use HAProxy to Set Up HTTP Load Balancing on an Ubuntu VPS</h1><p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-haproxy-to-set-up-http-load-balancing-on-an-ubuntu-vps" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-use-haproxy-to-set-up-http-load-balancing-on-an-ubuntu-vps</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;An-Introduction-to-HAProxy-and-Load-Balancing-Concepts&quot;&gt;&lt;a href=&quot;#An-Introduction-to-HAProxy-and-Load-Balancing-Concepts&quot; class=&quot;hea
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx serve WebP with nginx conditionally</title>
+    <link href="http://tongjiewen.com/2017/05/07/11%20Nginx%20serve%20WebP%20with%20nginx%20conditionally/"/>
+    <id>http://tongjiewen.com/2017/05/07/11 Nginx serve WebP with nginx conditionally/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:42:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/uhop/grunt-tight-sprite/wiki/Recipe:-serve-WebP-with-nginx-conditionally" target="_blank" rel="noopener">https://github.com/uhop/grunt-tight-sprite/wiki/Recipe:-serve-WebP-with-nginx-conditionally</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/uhop/grunt-tight-sprite/wiki/Recipe:-serve-WebP-with-nginx-conditionally&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信支付相关的限额明细的详细说明</title>
+    <link href="http://tongjiewen.com/2017/05/07/13%20%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3%E7%9A%84%E9%99%90%E9%A2%9D%E6%98%8E%E7%BB%86%E7%9A%84%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/"/>
+    <id>http://tongjiewen.com/2017/05/07/13 微信支付相关的限额明细的详细说明/</id>
+    <published>2017-05-07T03:46:25.000Z</published>
+    <updated>2017-12-09T05:43:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>越来越多的消费者习惯于使用微信支付，也都绑定了相关的银行卡，可以进行消费，转账，或者信用卡还款，的确是非常方便，但是涉及到使用银行卡，那就势必会涉及到各个银行不同的限额，在此笔者给大家整理下，方便大家使用。</p><p>一、微信支付常见银行限额如下：</p><p>储蓄卡和信用卡有所不同</p><p>二、微信信用卡还款限额如下：</p><p>为本人还款：单笔50000元，单日50000元，单月50万元；</p><p>为他人还款：单笔2000元，单日2000元，单月10000元。</p><p>三、转账给朋友的限额如下：</p><p>注：付款方未实名用户的日限额与月限额消费是包括微信支付所有的消费额度。如发红包已支付使用日限额1000，那么当日限额已全部使用完，无法再进行其它支付消费，比如转账等。</p><p>四、红包提现限额如下：</p><p>红包拆开后资金直接进入零钱，零钱提现每天没有次数限制，一个微信账号每天提现的额度为：单笔单日最高50000元。</p><p>五、面对面收钱付款及收款限额如下：</p><p>1、微信支付用户使用面对面收钱付款给收款方单笔单日限额为15000元，单日收款限额为5万元；</p><p>2、未添加过中国大陆地区银行卡的用户付款限额为单笔单日1000元，单月500元；收款限额为单日单笔500元，单月累计收款限额为5000元（超过收款限额后若想继续使用面对面收钱功能，需要添加一张中国大陆地区银行卡）。</p><p>六、发送红包的限额如下</p><p>1、未添加过银行卡的用户：</p><p>零钱支付额度为单笔单日1000元，单月1000元。若当月未使用零钱进行支付，即可发送单笔单日1000元、单月1000元的红包。超过额度可以添加银行卡完成支付；</p><p>2、已添加银行卡的用户：</p><p>限额为：单个红包限额200元，单次最多可发100个红包。同一银行卡限额单笔单日50000元；零钱支付限额单笔单日50000元。</p><p>3、普通红包和拼手气红包的限额：</p><p>无论是普通红包还是拼手气红包，单个最多只能领200元。</p><p>温馨提示：</p><p>如果银行卡单笔单日限额小于5万元，那么发红包限额以银行卡接口限额为准；</p><p>如果银行卡单笔单日限额大于5万元，那么发红包限额仍是5万元。</p><p>&nbsp;</p><p>来源 <a href="https://zhuanlan.zhihu.com/p/24098072" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24098072</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;越来越多的消费者习惯于使用微信支付，也都绑定了相关的银行卡，可以进行消费，转账，或者信用卡还款，的确是非常方便，但是涉及到使用银行卡，那就势必会涉及到各个银行不同的限额，在此笔者给大家整理下，方便大家使用。&lt;/p&gt;
+&lt;p&gt;一、微信支付常见银行限额如下：&lt;/p&gt;
+&lt;p&gt;储蓄卡
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

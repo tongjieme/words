@@ -1,0 +1,59 @@
+<html>
+<head>
+    <script src="https://jamestung.net:3333/dist/js/vendor/systemjs/system.js"></script>
+    <script>window.baseURL = "https://jamestung.net:3333/dist/"</script>
+    <script src="https://jamestung.net:3333/dist/config.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#4285f4">
+    <link href="/css/google.css" rel="stylesheet">
+    <title>Ninja's Google Search</title></head>
+<body>
+<form class="cm-searchForm" id="J-search"><input class="J-searchText searchText" type="text" name="q"
+                                                 placeholder="Type here"><input class="J-pageIndex" type="hidden"
+                                                                                name="pageIndex" value="0">
+    <button class="btn" type="submit" style="margin-left:10px;display:none">Search</button>
+</form>
+<script type="text/x-tmpl" id="tmpl-googleItems">
+    <ul>{% $.each(o.data.items, function(k,v){ %}<li class="item"><p class="title"><a href="{%=v.href%}" target="_blank">{%=v.title%}</a><span class="link">{%=v.href%}</span></p><p class="desc">{%=v.desc%}</p></li>{% }); %}</ul>{% if(o.data.pager.pageIndex !== 0){ %}<a class="btn J-changePage" href="#" data-page-index="{%= o.data.pager.pageIndex - 1 %}" style="margin-right:10px;">Prev</a>{% } %}
+{% if(o.data.pager.hasNext) { %}<a class="btn J-changePage" href="#" data-page-index="{%= o.data.pager.pageIndex + 1 %}">Next</a>{% } %}
+</script>
+<div class="J-render cm-googleSearch"></div>
+<script>get("jquery", "tmpl", "autocomplete", function ($, tmpl) {
+    $('#J-search [type="submit"]').show();
+    var autocomplete = $(".J-searchText").autoComplete({
+        delay     : 500, items: function () {
+            var This = this, searchText = $(".J-searchText").val();
+            $.ajax({
+                url     : "https://jamestung.net:3001/api/google/complete",
+                data    : $("#J-search").serializeArray(),
+                dataType: "json",
+                timeout : 2e4,
+                error   : function (e, t) {
+                    alert(t)
+                },
+                success : function (data) {
+                    var items = eval(data)[1].map(function (e) {
+                        return $("<div>" + e[0] + "</div>").text()
+                    });
+                    This.update(items)
+                }
+            })
+        }, confirm: function () {
+            $("#J-search").trigger("submit")
+        }
+    });
+    GET.q = decodeURI(GET.q || ""), document.querySelector(".J-searchText").value = GET.q.replace(/\+/g, " "), $("#J-search").on("submit", function (e) {
+        e.preventDefault(), autocomplete.hide();
+        var t = this;
+        $(".J-searchText").val();
+        $(t).find(".J-searchText").blur(), $.get("https://jamestung.net:3001/api/google/search?" + $.param($(this).serializeArray()), function (e) {
+            $(".J-render").html(tmpl("tmpl-googleItems", e))
+        })
+    }), $("body").on("click", ".J-changePage", function (e) {
+        e.preventDefault();
+        var t = $(this).data("pageIndex");
+        $("#J-search").find(".J-pageIndex").val(t).end().trigger("submit"), $(document).scrollTop(0)
+    }), GET.q && $("#J-search").trigger("submit")
+})</script>
+</body>
+</html>

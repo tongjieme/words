@@ -1,0 +1,21 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    GitHub: https://github.com/tongjieme
+    QRCode: /qr.html
+    Rss: /atom.xml
+
+favicon: /favicon.jpg
+logo: /favicon.jpg
+
+# Comment
+# e.g disqus: seansun
+disqus:
+# duoshuo: jamestung
+
+# Analytics
+# google-analytics:
+#ga: UA-65933410-1
+
+# Copyright Infomation
+startyear: 2015

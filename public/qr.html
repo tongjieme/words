@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+<head>
+  <meta charset=utf-8>
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>最简洁的二维码生成器</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description"  content="打开最快,无广告的二维码生成器" />
+  <meta name="keywords"  content="QR code,二维码生成器" />
+
+  <script src="vendor/qrcodejs/qrcode.min.js"></script>
+  <style>
+    .cm-textarea {
+      width:100%;
+      min-height:10em;
+    }
+  </style>
+</head>
+<body>
+
+<textarea id="J-content" class="cm-textarea" placeholder="输入任意内容" autofocus></textarea>
+
+<div id="qrcode"></div>
+<script type="text/javascript">
+
+var J_content = document.getElementById("J-content");
+var qr = document.getElementById("qrcode")
+
+var genQr = function(){
+  qr.innerHTML = "";
+  new QRCode(qr, J_content.value);
+};
+J_content.addEventListener("keyup", genQr)
+J_content.addEventListener("blur", genQr)
+
+</script>
+</body>
+</html>
