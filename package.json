@@ -6,7 +6,7 @@
     "version": "3.8.0"
   },
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "hexo": "^3.8.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-generator-archive": "^0.1.4",
